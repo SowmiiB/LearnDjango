@@ -1,0 +1,80 @@
+Django documentation:
+
+Django is a free and Open Source web application framework containing components and packages useful for Python web developers.
+It is used for rapid back-end web application development. It allows Python developers to focus more on business logic without building code from scratch.
+Built-in Django libraries can be reused for various use cases including user authentication, DB manipulation etc.
+
+
+Features of Django framework:
+DRY – Django follows the Don't Repeat Yourself principle. It allows developers to reuse existing code
+
+Fast – Django processes the user requests very quickly
+
+Components – Django has all the basic components required for building a web application without starting from scratch
+
+Security – It provides security to user data from data leaks and critical internet threats
+
+Scalability – Django allows you to scale up your application without impacting existing operations
+
+MVT Architecture in Django:
+Unlike other MVC based frameworks, Django uses MVT (Model-View-Template).
+In MVT architecture, Model is similar to the model component of MVC wherein it is used to manage data.
+Whereas, the business logic is managed by the View instead of the Model. Template is a HTML document that uses the Django Template Language (DTL).
+
+Django accepts the client request and selects the View based on the requested URI (Uniform Resource Identifier).
+The View interacts with the corresponding Model for the required data. The Model returns the database objects requested by the View.
+The View then processes the data and renders the required template along with Model data as a response back to the client.
+
+in command prompt:
+pip install django      --> to install django
+django-admin --version  --> to check the version and to confirm if django installed.
+
+To create a project:
+django-admin startproject project-name  --> This will create all the required files including manage.py file
+
+To run a project:
+python manage.py runserver  --> runs the project in local host.
+
+To create an app:
+django-admin startapp app-name  --> This will create a new app inside the project. This will create all the app,model,view,urls.py files.
+
+Always remember to create urls.py file inside app you created. the project.urls file will have app.url file so that it will be redirected to the app.urls and the
+appropriate views will be rendred.
+
+**If you get into an issue where the project.urls file couldn't able to find the app.urls file.
+because of this you cannot import the app inside the project.urls. Do the below to resolve this no module fould error.
+
+rightclick on the project and select Mark Directory as --> source Root.
+This might be beause the project is not the source root and we may have a different module on top of it.
+
+DTL Tag: --> {% block block_name %}  <content> {% endblock %} :
+There is one concept in django called Template inhheritance. This concept allows us to extend the benefits of
+one html template by adding the common contents of other html templates. The Django Template Language Tags act as
+a placeholder for the dynamic contents from other html templates.
+The DTL tag {% extends template_name %} is used to inherit from an existing template.
+
+GET and POST:
+GET --> Used to request a resource from the server.
+POST --> Used to send data to the server.
+CSRF --> Cross Site Resource Forgery Token, unique value provided implicitly for every client session.
+
+Static Files:
+Static files hold pictures, style sheets, javascript etc. When we want out webpage to use the styles, we need to configure the static files with our application.
+
+How to configure static files with the web page:
+1. Have the static folder in the project. The static folder will have all the required css, js,img files.
+2. Add the configuration in settings.py as STATIC_FILES_DIRS = [os.path.join(BASE_DIR,'static')] to add the static folder. This
+is to let Django know where the static files are located.
+3. Add the static root in settings.py as STATIC_ROOT = [os.path.join(BASE_DIR,'assets')]. There is a possiblity that
+static files can be from different locations. And to club them into a root so that we will not miss any file,
+we use this config and a static root folder called 'assets' will be created in project folder.
+4. In the command prompt run the command, 'python manage.py collectstatic' to collect all the static folders into the
+root folder 'assets'.
+5. To make use of this static folders,to use the styles in html, add the DTL tag {%load static %}
+on top of the html file.
+6. Since we are using the static folder, we need to make sure that the html file is using the styles and images from
+the static folder. For that we need to make changes to point to static files in wherever we mentioned
+ the styles and images in html file.
+
+
+
