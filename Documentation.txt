@@ -102,8 +102,6 @@ At this stage, if you run into any errors, that probably because of wrong dbname
 9. Finally migrate the model into database: python manage.py migrate.
 At this stage, you can able to see new empty tables inside the database.
 
-
-
  Good Points to remember:
  1. When you get syntax errors like TemplateSyntaxError: Could not parse the remainder, check if you have brackets
  correct. most of the times this error will occur due to bracket missings.
