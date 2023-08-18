@@ -76,5 +76,37 @@ on top of the html file.
 the static folder. For that we need to make changes to point to static files in wherever we mentioned
  the styles and images in html file.
 
+Object Relational Mapping:
+Mapping the relational database to an object is called object relational mapping.
+The structure of the table will automatically built by django based on the structure of the class that is been mapped.
+The table name would be appname_classname and the columns would be the attributes in the class.
+Each object created for the class will become rows of the table.
+
+Steps to map sql database with model:
+1. install mysql client --> pip install mysqlclient
+2. in settings.py, modify the DATABASE configuration. update the dbname,username,password etc.,
+3. make the class in model.py to inherit Model class. --> class Example(models.Model):
+4. after inheriting Model class, you can modify the attributes with Model fields as types. eg: CharField(),ImageField()
+This will help us to store the data with whatever type we want into the database.
+5. Primary key Id will automatically added by django so we don't need to have an attribute for primary key.
+6. Add the app configuration in INSTALLED_APPS in settings.py. the format would be, '<appname>.apps.<configName>'.
+You can find the configName in app.py file as Django would already created a config class whenever there is a model
+created.
+7. To migrate the model,Do the command --> python manage.py makemigrations. This will create a migration file with migration number.
+You can find it under migration folder. This folder will have all the attributes we created in the model including primary key.
+Later this migration file will be used to create a relation inside the database. So this file will basically have the table structure to be created.
+
+At this stage, if you run into any errors, that probably because of wrong dbname,hostname,or password for database.
+8. Now generate the table creation query by doing this command:
+        python manage.py sqlmigrate appname migration_number
+9. Finally migrate the model into database: python manage.py migrate.
+At this stage, you can able to see new empty tables inside the database.
+
+
+
+ Points to remember:
+ 1. When you get syntax errors like TemplateSyntaxError: Could not parse the remainder, check if you have brackets
+ correct. most of the times this error will occur due to bracket missings.
+
 
 

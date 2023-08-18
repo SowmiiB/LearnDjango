@@ -156,45 +156,54 @@
 
         <div class="tripList">
             <div class="row">
+
                 <div class="col-md-4 trip">
+                    {% static 'images' as baseURL %}
                     <span class="notify-badge">NEW</span>
-                    <img src="{% static '/images/catch me if you can.jpg' %}" alt="" class="tripImage">
-                    <div class="tripTitle">Catch Me If You Can</div>
-                    <div class="tripDescription">Nulla pretium tincidunt felis, nec.</div>
-                    <div class="tripCost">4.8</div>
+                    <img src="{{baseURL}}/{{film1.poster}}" alt="" class="tripImage">
+                    <div class="movieTitle">Catch Me If You Can</div>
+                    <div class="language">Language : English</div>
+                    <div class="rating">Rating : 4.8</div>
+                    <div class="ticketCost">Ticket cost : $5</div>
+
                 </div>
                 <div class="col-md-4 trip">
                     <span class="notify-badge">NEW</span>
                     <img src="{% static '/images/avatar.jpg' %}" alt="" class="tripImage">
-                    <div class="tripTitle">Avatar</div>
-                    <div class="tripDescription">Nulla pretium tincidunt felis, nec.</div>
-                    <div class="tripCost">4.0</div>
+                    <div class="movieTitle">Avatar</div>
+                    <div class="language">Language : English</div>
+                    <div class="rating">Rating : 4.0</div>
+                    <div class="ticketCost">Ticket cost : $8</div>
                 </div>
                 <div class="col-md-4 trip">
                     <span class="notify-badge">NEW</span>
                     <img src="{% static '/images/titanic.jpg' %}" alt="" class="tripImage">
-                    <div class="tripTitle">Titanic</div>
-                    <div class="tripDescription">Nulla pretium tincidunt felis, nec.</div>
-                    <div class="tripCost">4.3</div>
+                    <div class="movieTitle">Titanic</div>
+                    <div class="language">Lnguage : English</div>
+                    <div class="rating">Rating : 4.3</div>
+                    <div class="ticketCost">Ticket cost : $10</div>
 
                 </div>
                 <div class="col-md-4 trip">
                     <img src="{% static '/images/god father.jpg' %}" alt="" class="tripImage">
-                    <div class="tripTitle">God Father</div>
-                    <div class="tripDescription">Nulla pretium tincidunt felis, nec.</div>
-                    <div class="tripCost">4.9</div>
+                    <div class="movieTitle">God Father</div>
+                    <div class="language">Language : English</div>
+                    <div class="rating">Rating : 4.9</div>
+                    <div class="ticketCost">Ticket cost : $5</div>
                 </div>
                 <div class="col-md-4 trip">
                     <img src="{% static '/images/johny english.jpg' %}" alt="" class="tripImage">
-                    <div class="tripTitle">Johnny English</div>
-                    <div class="tripDescription">Nulla pretium tincidunt felis, nec.</div>
-                    <div class="tripCost">3.5</div>
+                    <div class="movieTitle">Johnny English</div>
+                    <div class="language">Language : English</div>
+                    <div class="rating">Rating : 3.5</div>
+                    <div class="ticketCost">Ticket cost : $15</div>
                 </div>
                 <div class="col-md-4 trip">
                     <img src="{% static '/images/avengers.jpg' %}" alt="" class="tripImage">
-                    <div class="tripTitle">Avenger - Infinty War</div>
-                    <div class="tripDescription">Nulla pretium tincidunt felis, nec.</div>
-                    <div class="tripCost">4.6</div>
+                    <div class="movieTitle">Avenger - Infinty War</div>
+                    <div class="language">Language : English</div>
+                    <div class="rating">Rating : 4.6</div>
+                    <div class="ticketCost">Ticket cost : $25</div>
                 </div>
             </div>
         </div>
