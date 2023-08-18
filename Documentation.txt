@@ -104,7 +104,7 @@ At this stage, you can able to see new empty tables inside the database.
 
 
 
- Points to remember:
+ Good Points to remember:
  1. When you get syntax errors like TemplateSyntaxError: Could not parse the remainder, check if you have brackets
  correct. most of the times this error will occur due to bracket missings.
 
